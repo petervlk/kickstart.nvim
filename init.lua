@@ -237,7 +237,17 @@ require('lazy').setup({
   -- Use `opts = {}` to force a plugin to be loaded.
   --
 
-  'tpope/vim-fugitive', -- git integration plugin
+  {
+    'tpope/vim-fugitive', -- git integration plugin
+    keys = {
+      {
+        '<leader>gs',
+        '<cmd>0G<cr>',
+        mode = { 'n' },
+        desc = '[S]tatus',
+      },
+    },
+  },
 
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
@@ -323,6 +333,7 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
+        { '<leader>g', group = '[G]it', mode = { 'n' } },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
