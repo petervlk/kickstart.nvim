@@ -239,14 +239,34 @@ require('lazy').setup({
   -- Use `opts = {}` to force a plugin to be loaded.
   --
 
+  -- TODO: remove in favor of Neogit?
   {
     'tpope/vim-fugitive', -- git integration plugin
+    -- keys = {
+    --   {
+    --     '<leader>gs',
+    --     '<cmd>0G<cr>',
+    --     mode = { 'n' },
+    --     desc = '[S]tatus',
+    --   },
+    -- },
+    event = 'VeryLazy',
+  },
+
+  {
+    'NeogitOrg/neogit',
+    dependencies = {
+      'nvim-lua/plenary.nvim', -- required
+      'sindrets/diffview.nvim', -- optional - Diff integration
+      'nvim-telescope/telescope.nvim', -- optional
+    },
+    config = true,
     keys = {
       {
-        '<leader>gs',
-        '<cmd>0G<cr>',
+        '<leader>gg',
+        '<cmd>Neogit<cr>',
         mode = { 'n' },
-        desc = '[S]tatus',
+        desc = 'Status',
       },
     },
   },
