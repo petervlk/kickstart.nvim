@@ -875,6 +875,40 @@ require('lazy').setup({
     end,
   },
 
+  'HiPhish/rainbow-delimiters.nvim',
+
+  {
+    'julienvincent/nvim-paredit',
+    config = function()
+      require('nvim-paredit').setup()
+    end,
+  },
+
+  {
+    'Olical/conjure',
+    ft = { 'clojure', 'fennel' }, -- etc
+    lazy = true,
+    init = function()
+      -- Set configuration options here
+      -- Uncomment this to get verbose logging to help diagnose internal Conjure issues
+      -- This is VERY helpful when reporting an issue with the project
+      -- vim.g["conjure#debug"] = true
+    end,
+
+    -- Optional cmp-conjure integration
+    dependencies = { 'PaterJason/cmp-conjure' },
+  },
+
+  {
+    'PaterJason/cmp-conjure',
+    lazy = true,
+    config = function()
+      local cmp = require 'cmp'
+      local config = cmp.get_config()
+      table.insert(config.sources, { name = 'conjure' })
+      return cmp.setup(config)
+    end,
+  },
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
