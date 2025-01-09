@@ -1000,6 +1000,24 @@ require('lazy').setup({
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 
+  {
+    'christoomey/vim-tmux-navigator',
+    cmd = {
+      'TmuxNavigateLeft',
+      'TmuxNavigateDown',
+      'TmuxNavigateUp',
+      'TmuxNavigateRight',
+      'TmuxNavigatePrevious',
+      'TmuxNavigatorProcessList',
+    },
+    keys = {
+      { '<m-h>', '<cmd>TmuxNavigateLeft<cr>' },
+      { '<m-j>', '<cmd>TmuxNavigateDown<cr>' },
+      { '<m-k>', '<cmd>TmuxNavigateUp<cr>' },
+      { '<m-l>', '<cmd>TmuxNavigateRight<cr>' },
+    },
+  },
+
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
