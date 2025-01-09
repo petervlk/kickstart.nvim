@@ -470,6 +470,11 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Shortcut for searching your dotfiles
+      vim.keymap.set('n', '<leader>sd', function()
+        builtin.find_files { cwd = '~/.dotfiles', hidden = true }
+      end, { desc = '[S]earch [D]otfiles' })
     end,
   },
 
