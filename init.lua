@@ -879,12 +879,7 @@ require('lazy').setup({
 
   'HiPhish/rainbow-delimiters.nvim',
 
-  {
-    'julienvincent/nvim-paredit',
-    config = function()
-      require('nvim-paredit').setup()
-    end,
-  },
+  'PaterJason/nvim-treesitter-sexp',
 
   {
     'Olical/conjure',
