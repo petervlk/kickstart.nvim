@@ -6,7 +6,9 @@ return {
   event = 'InsertEnter',
   -- Optional dependency
   dependencies = { 'hrsh7th/nvim-cmp' },
-  opts = {},
+  opts = {
+    ignored_next_char = '',
+  },
   -- config = function()
   --   require('nvim-autopairs').setup {}
   --   -- If you want to automatically add `(` after selecting a function or method
