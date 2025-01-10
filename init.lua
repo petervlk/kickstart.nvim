@@ -559,6 +559,8 @@ require('lazy').setup({
           -- Find references for the word under your cursor.
           map('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
 
+          map('K', vim.lsp.buf.hover, 'Doc symbol under cursor')
+
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
           map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
@@ -890,6 +892,13 @@ require('lazy').setup({
     lazy = true,
     init = function()
       -- Set configuration options here
+
+      -- Disable the documentation mapping
+      vim.g['conjure#mapping#doc_word'] = false
+
+      -- Rebind it from K to <prefix>k
+      vim.g['conjure#mapping#doc_word'] = 'k'
+
       -- Uncomment this to get verbose logging to help diagnose internal Conjure issues
       -- This is VERY helpful when reporting an issue with the project
       -- vim.g["conjure#debug"] = true
