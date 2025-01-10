@@ -1006,21 +1006,14 @@ require('lazy').setup({
   },
 
   {
-    'christoomey/vim-tmux-navigator',
-    cmd = {
-      'TmuxNavigateLeft',
-      'TmuxNavigateDown',
-      'TmuxNavigateUp',
-      'TmuxNavigateRight',
-      'TmuxNavigatePrevious',
-      'TmuxNavigatorProcessList',
-    },
-    keys = {
-      { '<m-h>', '<cmd>TmuxNavigateLeft<cr>' },
-      { '<m-j>', '<cmd>TmuxNavigateDown<cr>' },
-      { '<m-k>', '<cmd>TmuxNavigateUp<cr>' },
-      { '<m-l>', '<cmd>TmuxNavigateRight<cr>' },
-    },
+    'numToStr/Navigator.nvim',
+    config = function()
+      require('Navigator').setup {}
+      vim.keymap.set({ 'n', 't' }, '<A-h>', '<CMD>NavigatorLeft<CR>')
+      vim.keymap.set({ 'n', 't' }, '<A-l>', '<CMD>NavigatorRight<CR>')
+      vim.keymap.set({ 'n', 't' }, '<A-k>', '<CMD>NavigatorUp<CR>')
+      vim.keymap.set({ 'n', 't' }, '<A-j>', '<CMD>NavigatorDown<CR>')
+    end,
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
