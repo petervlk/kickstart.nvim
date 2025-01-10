@@ -430,6 +430,11 @@ require('lazy').setup({
           },
         },
         -- pickers = {},
+        pickers = {
+          find_files = {
+            theme = 'ivy',
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
