@@ -351,11 +351,22 @@ require('lazy').setup({
               -- ['<c-enter>'] = 'to_fuzzy_refine'
             },
           },
+          layout_config = {
+            vertical = {
+              height = function(_, _, l)
+                return l
+              end,
+              width = function(_, c, _)
+                return c
+              end,
+              prompt_position = 'bottom',
+              preview_cutoff = 1,
+            },
+          },
         },
-        -- pickers = {},
         pickers = {
           find_files = {
-            theme = 'ivy',
+            layout_strategy = 'vertical',
           },
         },
         extensions = {
