@@ -875,7 +875,9 @@ require('lazy').setup({
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
 
-      require('mini.files').setup()
+      require('mini.files').setup(vim.keymap.set('n', '-', function()
+        MiniFiles.open(vim.api.nvim_buf_get_name(0))
+      end))
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
