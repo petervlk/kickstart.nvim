@@ -53,6 +53,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
         },
       },
       pickers = {
+        live_grep = {
+          layout_strategy = 'vertical',
+          layout_config = { height = 0.6, width = 0.6 },
+        },
         find_files = {
           layout_strategy = 'vertical',
         },
