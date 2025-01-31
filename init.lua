@@ -210,15 +210,6 @@ require('lazy').setup {
       end,
     },
 
-    {
-      'EdenEast/nightfox.nvim',
-      priority = 1000, -- Make sure to load this before all the other start plugins.
-      init = function()
-        vim.cmd.colorscheme 'nightfox'
-      end,
-      opts = {},
-    },
-
     -- Highlight todo, notes, etc in comments
     { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
