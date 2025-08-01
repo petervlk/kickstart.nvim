@@ -79,6 +79,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
     pcall(require('telescope').load_extension, 'undo')
+    pcall(require('telescope').load_extension, 'projects')
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
@@ -121,6 +122,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       builtin.find_files { cwd = '~/.dotfiles', hidden = true }
     end, { desc = '[S]earch [D]otfiles' })
 
+    vim.keymap.set('n', '<leader>p', require('telescope').extensions.projects.projects, { desc = '[ ] Open project' })
     vim.keymap.set('n', '<leader>u', '<cmd>Telescope undo<cr>')
   end,
 }
