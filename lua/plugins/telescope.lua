@@ -59,6 +59,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
         },
         find_files = {
           layout_strategy = 'vertical',
+          find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix', '--hidden', '--exclude', '.git' },
+        },
+        buffers = {
+          theme = 'ivy',
         },
       },
       extensions = {
