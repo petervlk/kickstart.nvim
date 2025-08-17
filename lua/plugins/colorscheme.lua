@@ -1,9 +1,7 @@
 return {
-  'ellisonleao/gruvbox.nvim',
-  priority = 1000, -- Make sure to load this before all the other start plugins.
-  config = true,
-  init = function()
-    vim.cmd.colorscheme 'gruvbox'
-  end,
+  'f4z3r/gruvbox-material.nvim',
+  name = 'gruvbox-material',
+  lazy = false,
+  priority = 1000,
   opts = {},
 }
