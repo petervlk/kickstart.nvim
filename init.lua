@@ -127,7 +127,14 @@ require('lazy').setup {
 
     'HiPhish/rainbow-delimiters.nvim',
 
-    'PaterJason/nvim-treesitter-sexp',
+    -- 'PaterJason/nvim-treesitter-sexp', -- issues with neovim 0.11; https://github.com/PaterJason/nvim-treesitter-sexp/issues/10
+
+    {
+      'julienvincent/nvim-paredit',
+      config = function()
+        require('nvim-paredit').setup()
+      end,
+    },
 
     {
       'Olical/conjure',
