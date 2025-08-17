@@ -115,6 +115,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- fix git merging
+-- https://github.com/neovim/neovim/issues/22696#issuecomment-2796545495
+if vim.opt.diff:get() then
+  vim.o.diffopt = 'internal,filler,closeoff'
+end
+
 require 'lazy-bootstrap'
 
 -- [[ Configure and install plugins ]]
