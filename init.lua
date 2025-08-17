@@ -165,11 +165,6 @@ require('lazy').setup {
     },
 
     {
-      'invertisment/conjure-clj-additions-vanilla',
-      url = 'https://gitlab.com/invertisment/conjure-clj-additions-vanilla',
-    },
-
-    {
       'PaterJason/cmp-conjure',
       lazy = true,
       config = function()
