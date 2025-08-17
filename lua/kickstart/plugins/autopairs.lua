@@ -7,7 +7,7 @@ return {
   -- Optional dependency
   dependencies = { 'hrsh7th/nvim-cmp' },
   opts = {
-    ignored_next_char = '',
+    enable_check_bracket_line = false,
   },
   -- config = function()
   --   require('nvim-autopairs').setup {}
