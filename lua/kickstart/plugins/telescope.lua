@@ -55,12 +55,38 @@ return {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
-        -- pickers = {}
+        defaults = {
+          mappings = {
+            i = {
+              ['<C-j>'] = require('telescope.actions').move_selection_next,
+              ['<C-k>'] = require('telescope.actions').move_selection_previous,
+              -- ['<c-enter>'] = 'to_fuzzy_refine'
+            },
+          },
+          layout_config = {
+            vertical = {
+              height = function(_, _, l)
+                return l
+              end,
+              width = function(_, c, _)
+                return c
+              end,
+              prompt_position = 'bottom',
+              preview_cutoff = 1,
+            },
+          },
+        },
+        pickers = {
+          live_grep = {
+            layout_strategy = 'vertical',
+          },
+          find_files = {
+            layout_strategy = 'vertical',
+          },
+          buffers = {
+            theme = 'ivy',
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
