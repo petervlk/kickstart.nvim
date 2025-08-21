@@ -135,12 +135,13 @@ require('lazy').setup {
 
     -- 'PaterJason/nvim-treesitter-sexp', -- issues with neovim 0.11; https://github.com/PaterJason/nvim-treesitter-sexp/issues/10
 
-    {
-      'julienvincent/nvim-paredit',
-      config = function()
-        require('nvim-paredit').setup()
-      end,
-    },
+    ---- TODO: trying out parinfer
+    -- {
+    --   'julienvincent/nvim-paredit',
+    --   config = function()
+    --     require('nvim-paredit').setup()
+    --   end,
+    -- },
 
     {
       'eraserhd/parinfer-rust',
