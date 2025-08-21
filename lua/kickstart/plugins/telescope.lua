@@ -79,9 +79,16 @@ return {
         pickers = {
           live_grep = {
             layout_strategy = 'vertical',
+            additional_args = {
+              '--hidden',
+              '--glob',
+              '!.git/',
+            },
+            -- layout_config = { height = 0.6, width = 0.6 },
           },
           find_files = {
             layout_strategy = 'vertical',
+            find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix', '--hidden', '--exclude', '.git' },
           },
           buffers = {
             theme = 'ivy',
