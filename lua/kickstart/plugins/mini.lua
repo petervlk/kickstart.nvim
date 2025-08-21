@@ -17,6 +17,10 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
+      require('mini.files').setup(vim.keymap.set('n', '-', function()
+        MiniFiles.open(vim.api.nvim_buf_get_name(0))
+      end))
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
