@@ -1,4 +1,14 @@
 return {
+  {
+    'saghen/blink.compat',
+    -- use v2.* for blink.cmp v1.*
+    version = '2.*',
+    -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
+    lazy = true,
+    -- make sure to set opts so that lazy.nvim calls blink.compat's setup
+    opts = {},
+  },
+
   { -- Autocompletion
     'saghen/blink.cmp',
     event = 'VimEnter',
@@ -31,6 +41,7 @@ return {
         opts = {},
       },
       'folke/lazydev.nvim',
+      'PaterJason/cmp-conjure',
     },
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
@@ -79,6 +90,7 @@ return {
         default = { 'lsp', 'path', 'snippets', 'lazydev' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+          conjure = { module = 'blink.compat.source', name = 'conjure' },
         },
       },
 
