@@ -26,7 +26,7 @@ end)
 -- Enable break indent
 vim.o.breakindent = true
 
--- Enable auto indent
+-- Enable auto indent - copy indentation level from previous non-empty line
 vim.o.autoindent = true
 
 -- Save undo history
