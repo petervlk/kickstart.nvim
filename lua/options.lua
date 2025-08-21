@@ -26,6 +26,9 @@ end)
 -- Enable break indent
 vim.o.breakindent = true
 
+-- Enable auto indent
+vim.o.autoindent = true
+
 -- Save undo history
 vim.o.undofile = true
 
