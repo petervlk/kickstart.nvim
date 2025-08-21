@@ -87,7 +87,7 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev' },
+        default = { 'lsp', 'path', 'snippets', 'lazydev', 'conjure' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           conjure = { module = 'blink.compat.source', name = 'conjure' },
