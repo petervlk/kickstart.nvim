@@ -77,4 +77,10 @@ vim.o.confirm = true
 -- set width guide column at 100 characters
 vim.opt.colorcolumn = '100'
 
+-- fix git merging
+-- https://github.com/neovim/neovim/issues/22696#issuecomment-2796545495
+if vim.opt.diff:get() then
+  vim.o.diffopt = 'internal,filler,closeoff'
+end
+
 -- vim: ts=2 sts=2 sw=2 et
