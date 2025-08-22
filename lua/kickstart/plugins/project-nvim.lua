@@ -1,7 +1,7 @@
 return {
-  'ahmedkhalf/project.nvim',
+  'DrKJeff16/project.nvim',
   config = function()
-    require('project_nvim').setup {
+    require('project').setup {
       patterns = {
         -- git
         '.git',
@@ -14,7 +14,6 @@ return {
         -- go
         'go.mod',
       },
-      silent_chdir = false,
     }
   end,
 }
