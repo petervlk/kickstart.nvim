@@ -7,6 +7,7 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = lint.linters_by_ft or {}
       lint.linters_by_ft['clojure'] = { 'clj-kondo' }
+      lint.linters_by_ft['python'] = { 'mypy', 'pylint' }
       lint.linters_by_ft['markdown'] = nil
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

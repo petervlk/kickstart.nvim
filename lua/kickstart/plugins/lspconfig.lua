@@ -235,6 +235,35 @@ return {
             },
           },
         },
+
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                -- Disable built-in formatters and linters (handled by conform/nvim-lint)
+                black = { enabled = false },
+                autopep8 = { enabled = false },
+                yapf = { enabled = false },
+                flake8 = { enabled = false },
+                pylint = { enabled = false },
+                pycodestyle = { enabled = false },
+                pydocstyle = { enabled = false },
+                mccabe = { enabled = false },
+
+                -- Keep LSP features
+                jedi_completion = { enabled = true },
+                jedi_hover = { enabled = true },
+                jedi_references = { enabled = true },
+                jedi_signature_help = { enabled = true },
+                jedi_symbols = { enabled = true },
+                rope_autoimport = { enabled = true },
+              },
+            },
+          },
+          flags = {
+            debounce_text_changes = 200,
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
