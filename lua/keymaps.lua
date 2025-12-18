@@ -18,6 +18,38 @@ vim.keymap.set('n', '<leader>]', '<cmd>cnext<CR>', { desc = 'Jump to previous qu
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- zk keymaps
+local function keymap_opts(keymap_desc)
+  return { noremap = true, silent = false, desc = keymap_desc }
+end
+
+-- Create a new note after asking for its title.
+vim.api.nvim_set_keymap('n', '<leader>zn', "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", keymap_opts 'New note with title')
+-- Create a new journal entry.
+vim.api.nvim_set_keymap('n', '<leader>zj', "<Cmd>ZkNew { dir = 'journal' }<CR>", keymap_opts 'Todays journal entry')
+
+-- Create a new note in the same directory as the current buffer, using the current selection for title.
+vim.api.nvim_set_keymap(
+  'v',
+  '<leader>znt',
+  ":<Cmd>'<,'><CR>ZkNewFromTitleSelection { dir = vim.fn.expand('%:p:h') }<CR>",
+  keymap_opts 'New note from with selected title'
+)
+-- Create a new note in the same directory as the current buffer, using the current selection for note content and asking for its title.
+vim.api.nvim_set_keymap(
+  'v',
+  '<leader>znc',
+  ":'<,'>ZkNewFromContentSelection { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>",
+  keymap_opts 'New note from selected content'
+)
+
+-- Open notes.
+vim.api.nvim_set_keymap('n', '<leader>zo', "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", keymap_opts 'Open all notes')
+-- Search for the notes matching a given query.
+vim.api.nvim_set_keymap('n', '<leader>zf', "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", keymap_opts 'Grep notes')
+-- Search for the notes matching the current visual selection.
+vim.api.nvim_set_keymap('v', '<leader>zf', ":'<,'>ZkMatch<CR>", keymap_opts 'Grep notes')
+
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
